@@ -4,16 +4,29 @@
         <title>siteclone warn</title>
         <meta charset="UTF-8">
         <style> 
+            .alertDiv{
+                font-size: 110%;
+                font-family: courier;
+                border-style: solid;
+                border-width: 5px;
+                border-color: red;
+                text-align: center;
+                background-color: yellow;
+                color: black;
+                padding: 10px 10px 10px 10px;
+
+            }
         </style>
     </head>
     <body>
         
+        <div id='main'></div>
+        
+        <br/>
         page content...
         
         <script>
-            
 
-            
             /* // use this for encoding the string
             var validDomainStr = 'benjaminaaron.github.io/invalid-domain-warning';
             for(var i=0; i < validDomainStr.length; i++)
@@ -32,9 +45,14 @@
         
             if(actualDomain.indexOf(validDomain) > -1)
                 console.log('valid domain');
-            else
+            else {
                 console.log('invalid domain');
-
+                var alertDiv = document.createElement('div');
+                alertDiv.className = 'alertDiv';
+                var text = document.createTextNode('WARNING: this site is not hosted on it\'s intended domain ' + validDomain);
+                alertDiv.appendChild(text);        
+                document.getElementById('main').appendChild(alertDiv);
+            };
 
         </script>
     </body>

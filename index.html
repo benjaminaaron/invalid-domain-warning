@@ -27,13 +27,13 @@
             for(var i=0; i < validDomainEncoded.length; i++)
                 validDomain += String.fromCharCode(validDomainEncoded[i]);
                         
-            console.log(window.location.href); 
-            console.log(validDomain);           
-                        
-            if(!window.location.href.indexOf(validDomain) > -1)
-                console.log("INVALID");
+            var actualDomain = window.location.href; 
+            //actualDomain = 'http://benjaminaaron.github.io/invalid-domain-warning/';
+        
+            if(actualDomain.indexOf(validDomain) > -1)
+                console.log('valid domain');
             else
-                console.log("VALID");
+                console.log('invalid domain');
 
 
         </script>

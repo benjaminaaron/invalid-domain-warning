@@ -15,16 +15,24 @@
 
             console.log(window.location.href);
             
-            var validDomain = 'benjaminaaron.github.io/invalid-domain-warning';
-            for(var i=0; i < str.length; i++)
-                console.log(i + ': ' + str.charCodeAt(i));
-                
-            var validDomainEncoded = "";
-            
-            /*
-            for(var i=0; i < encodedTrueURL.length; i++)
-                trueURL += String.fromCharCode(validDomainEncoded[i]);
+            /* // use this for encoding the string
+            var validDomainStr = 'benjaminaaron.github.io/invalid-domain-warning';
+            for(var i=0; i < validDomainStr.length; i++)
+                console.log(i + ': ' + validDomainStr.charCodeAt(i));
             */
+                
+            var validDomainEncoded = [98, 101, 110, 106, 97, 109, 105, 110, 97, 97, 114, 111, 110, 46, 103, 105, 116, 104, 117, 98, 46, 105, 111, 47, 105, 110, 118, 97, 108, 105, 100, 45, 100, 111, 109, 97, 105, 110, 45, 119, 97, 114, 110, 105, 110, 103];
+            
+            var validDomain = '';
+            
+            for(var i=0; i < validDomainEncoded.length; i++)
+                validDomain += String.fromCharCode(validDomainEncoded[i]);
+                        
+            if(!window.location.href.indexOf(validDomain) > -1)
+                console.log("INVALID");
+            else
+                console.log("VALID");
+
 
         </script>
     </body>
